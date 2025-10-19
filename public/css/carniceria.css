@@ -1,0 +1,111 @@
+/* Estilos temáticos para la carnicería */
+:root {
+  --carn-rojo: #b80f0f;
+  --carn-crema: #fff7f1;
+  --carn-gris: #f5f5f7;
+  --carn-dark: #2b2b2b;
+}
+
+body {
+  background: linear-gradient(180deg, var(--carn-crema), #fff);
+  color: var(--carn-dark);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--carn-rojo) !important;
+  letter-spacing: 0.6px;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #fff, #fff);
+}
+
+.btn-primary {
+  background: var(--carn-rojo);
+  border-color: var(--carn-rojo);
+}
+
+.btn-primary:hover {
+  background: #9f0d0d;
+  border-color: #9f0d0d;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hero {
+  padding: 48px 24px;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.list-group-item {
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 40px;
+}
+
+.logo-mark {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--carn-rojo);
+  margin-right: 8px;
+}
+
+.navbar-brand .logo-mark {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+}
+
+@media (min-width: 1200px) {
+  .logo-mark { width: 32px; height: 32px; }
+}
+
+/* Evitar que SVGs embebidos crezcan desproporcionadamente en las vistas. */
+svg {
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  svg { max-width: 140px; }
+}
+
+/* Regla defensiva: limitar SVGs de gran tamaño que estén fuera del flujo
+   (por ejemplo el gran hero SVG incluido en welcome.blade.php). */
+.hero > svg,
+.container .hero svg,
+body > svg {
+  max-width: 160px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Make inline/content icons (pagination, buttons, lists) small by default inside app containers
+   This prevents oversized decorative SVGs from appearing in list pages like /productos. */
+.container svg,
+.list-group svg,
+.pagination svg,
+nav svg,
+.btn svg {
+  max-width: 28px !important;
+  height: auto !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
